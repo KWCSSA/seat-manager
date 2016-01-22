@@ -31,7 +31,7 @@
         </tr>
         <tr ng-repeat="row in rows">
             <td class="padding-right" ng-bind="row"></td>
-            <td class="seat" ng-repeat="col in cols|reverse " ng-if="!exceed(row,col,1)" ng-click="seatClicked('O'+ row + col)" ng-switch on="getStatus('O'+row + col)" ng-style="{'background-image':getStatus('O'+row+col),'font-size':'9px','min-width':'15px','position':'relative','left':getShift(row,1),'text-align':'right'}">
+            <td class="seat" ng-repeat="col in cols|reverse " ng-if="!exceed(row,col,1)" ng-click="seatClicked('O'+ row + col)"  ng-style="{'background-image':getStatus('O'+row+col),'font-size':'9px','min-width':'15px','position':'relative','left':getShift(row,1),'text-align':'right'}">
                {{col}}
    
             </td>
