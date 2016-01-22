@@ -1,10 +1,5 @@
 <?php
-
-require '../vendor/autoload.php';
-use Mailgun\Mailgun;
-$mg = new Mailgun("key-5050152406bbc874ab711f56d41e124e");
-$domain = "sandboxd7e86cfe736c40d5a29b0e92112a3f6c.mailgun.org";
-date_default_timezone_set('America/New_York');
+include "mail_ini.php";
 
 $vip = array('A8','A9','B8','B9','C8','C9');
 
@@ -15,8 +10,9 @@ $selected = $request->select;
 $name = $request->user_name;
 $email = $request->user_email;
 
+include "mysql_ini.php";
 
-$db = new mysqli('localhost','root','wdtda2907','chunwan');
+
 
 $result=$db->query("SELECT * FROM reserved WHERE seat_pos = '$selected'");
 

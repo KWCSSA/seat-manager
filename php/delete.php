@@ -1,5 +1,5 @@
 <?php
-$db = new mysqli('localhost','root','wdtda2907','chunwan');
+include "mysql_ini.php";
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 

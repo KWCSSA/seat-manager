@@ -1,5 +1,5 @@
 <?php
-$db = new mysqli('localhost','root','wdtda2907','chunwan');
+include "mysql_ini.php";
 
 $sql = 'SELECT * FROM reserved';
 
