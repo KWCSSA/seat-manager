@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="chunwan">
+<head>
+    <title>Spring festival</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <meta charset="utf-8">
+</head>
+<body>
+
+<div class="container" ng-controller="MainCtrl">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img id="logo" class="navbar-brand" src="images/logo.png">
+                
+         
+        </div>
+    </div>
+</nav>
+<div class="row">
+<div class="col-md-8">
+<h3>Orchestra</h3>
+    <table class="seatLayout"  >
+        <tr>
+            <td class="padding-bottom"></td>
+     
+        </tr>
+        <tr ng-repeat="row in rows">
+            <td class="padding-right" ng-bind="row"></td>
+            <td class="seat" ng-repeat="col in cols|reverse " ng-if="!exceed(row,col,1)" ng-click="seatClicked('O'+ row + col)" ng-switch on="getStatus('O'+row + col)" ng-style="{'background-image':getStatus('O'+row+col),'font-size':'9px','min-width':'15px','position':'relative','left':getShift(row,1),'text-align':'right'}">
+               {{col}}
+   
+            </td>
+
+        </tr>
+
+    </table>
+</div>
+
+    <p class = "col-md-offset-4" style="font-size:1.8rem">Selected:<strong style="color:red">{{selected}}</strong><p ng-show="isVIP(selected)" style="color:red">VIP座</p></p>
+
+    <div class="col-md-8">
+<h3>Balcony</h3>
+ <table class="seatLayout"  >
+        <tr>
+            <td class="padding-bottom"></td>
+      
+        </tr>
+        <tr ng-repeat="row in rowsTwo">
+            <td class="padding-right" ng-bind="row"></td>
+            <td class="seat" ng-repeat="col in cols|reverse " ng-if="!exceed(row,col,2)" ng-click="seatClicked('B'+row + col)" ng-switch on="getStatus('B'+ row + col)" ng-style="{'background-image':getStatus('B'+row+col),'font-size':'10px','min-width':'15px','position':'relative','left':getShift(row,2),'text-align':'right'}">
+               {{col}}
+            </td>
+        </tr>
+    </table>
+
+    <div class="legend">
+        <img src="images/seat_available_2.png"> Available
+        <img src="images/seat_reserved_2.png" class="padding-left"> Reserved
+        <img src="images/seat_selected_2.png" class="padding-left"> Selected
+        <img src="images/vip_available_2.png" class="padding-left"> VIP
+               
+
+    </div>
+
+</div>
+</div>
+<br></br>
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+        <p>Please input name & email:</p>
+        <form name="myForm" ng-submit="submit()" novalidate>
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="user_name" ng-model="user_name" required >
+                <span style="color:red" ng-show="myForm.user_name.$dirty && myForm.user_name.$invalid">
+                <span ng-show="myForm.user_name.$error.required">用户名是必须的。</span>
+                </span>
+                
+            </div>
+
+             <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" name="user_email" ng-model="user_email" required placeholder="Email" >
+                <span style="color:red" ng-show="myForm.user_email.$dirty && myForm.user_email.$invalid">
+                <span ng-show="myForm.user_email.$error.required">邮箱是必须的。</span>
+                <span ng-show="myForm.user_email.$error.email">非法的邮箱地址。</span>
+
+                </span>
+                      <br>
+                  <p>Selected:<strong>{{selected}}</strong><p class="padding-left" ng-show="isVIP(selected)">VIP座</p></p>
+                  
+                
+            </div>
+            <input class="btn btn-primary" type="submit" ng-disabled="myForm.$invalid || !haveSelected()" name="submit">
+            </form>
+
+
+    </div>
+
+
+
+
+    <br></br>
+
+
+
+<div>
+</div>
+
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/frontCtrl.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
