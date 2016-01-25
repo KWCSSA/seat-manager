@@ -15,7 +15,20 @@ app.controller('MainCtrl', function ($scope, $http, $window) {
     $scope.balLimit=[];
     $scope.space = " ";
 
+
+
+
     $http.get('php/getLayout.php').success(function(data) {
+            $http.get('php/getReserved.php').success(function (data) {
+
+        console.log(data);
+
+        for(var i=0;i<data.length;i++) {
+            reserved.push(data[i].seat_pos);
+        }
+       
+
+    });
         $scope.rows = data[0];
         $scope.cols = data[1];
         $scope.oneLimit = data[2];
@@ -27,16 +40,6 @@ app.controller('MainCtrl', function ($scope, $http, $window) {
         
     });
 
-    $http.get('php/getReserved.php').success(function (data) {
-
-        console.log(data);
-
-        for(var i=0;i<data.length;i++) {
-            reserved.push(data[i].seat_pos);
-        }
-       
-
-    });
     
     
     $scope.haveSelected = function() {
