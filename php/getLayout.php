@@ -20,7 +20,10 @@
 
 	addReserved(1,24,'A',$reserved);
 	addReserved(1,29,'B',$reserved);
+	addReserved(1,8,'C',$reserved);
+	addReserved(27,34,'C',$reserved);
 	addReserved(19,31,'H',$reserved);
+	addReserved(19,32,'J',$reserved);
 	addReserved(19,32,'J',$reserved);
 	
 
