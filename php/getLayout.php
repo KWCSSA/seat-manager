@@ -22,10 +22,15 @@
 	addReserved(1,29,'B',$reserved);
 	addReserved(19,31,'H',$reserved);
 	addReserved(19,32,'J',$reserved);
-	array_push($reserved,"OD1");
-	array_push($reserved,"OD41");
+	
+
 	for ($i=12;$i<=32;$i++) {
 		array_push($reserved,'BA'.$i);
+	}
+
+
+	for ($i=12;$i<=32;$i++) {
+		array_push($reserved,'BB'.$i);
 	}
 
 	function addVIP($min,$max,$row,&$vip) {

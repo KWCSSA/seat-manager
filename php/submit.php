@@ -38,10 +38,10 @@ if($result->num_rows > 0)    {
 			$stmt->execute();
 		    $stmt->close();
 
-				$mg->sendMessage($domain, array('from'    => 'dian@tangdian.ca', 
-                                'to'      => $email, 
-                                'subject' => 'Congratulations!  '.$name.',you have successfully reserved a seat!', 
-                                'text'    => 'Hi!'.$name.",\n This is a confirmation that you have reserved a seat at postion:".$seat_pos." at EST  ".date('Y-m-d H:i:s')."\n  Please go to SLC 2034 to claim your ticket."));
+				// $mg->sendMessage($domain, array('from'    => 'dian@tangdian.ca', 
+    //                             'to'      => $email, 
+    //                             'subject' => 'Congratulations!  '.$name.',you have successfully reserved a seat!', 
+    //                             'text'    => 'Hi!'.$name.",\n This is a confirmation that you have reserved a seat at postion:".$seat_pos." at EST  ".date('Y-m-d H:i:s')."\n  Please go to SLC 2034 to claim your ticket."));
 
 			}
 			

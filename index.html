@@ -86,7 +86,7 @@
 
              <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" name="user_email" ng-model="user_email" required placeholder="Email" >
+                <input type="email" class="form-control" name="user_email" ng-model="user_email" required  >
                 <span style="color:red" ng-show="myForm.user_email.$dirty && myForm.user_email.$invalid">
                 <span ng-show="myForm.user_email.$error.required">邮箱是必须的。</span>
                 <span ng-show="myForm.user_email.$error.email">非法的邮箱地址。</span>
