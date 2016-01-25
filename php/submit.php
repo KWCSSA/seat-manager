@@ -8,7 +8,11 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 $selected = $request->select;
 $name = $request->user_name;
-$email = $request->user_email;
+$email = "Empty";
+if (isset($request->user_email) )
+		$email = $request->user_email;
+	
+
 
 include "mysql_ini.php";
 
