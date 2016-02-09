@@ -36,6 +36,14 @@
 		array_push($reserved,'BB'.$i);
 	}
 
+	for ($i=1;$i<=15;$i++) {
+		array_push($reserved,'BE'.$i);
+	}
+
+	for ($i=1;$i<=75;$i++) {
+		array_push($reserved,'BF'.$i);
+	}
+
 	function addVIP($min,$max,$row,&$vip) {
 	    for ($i=$min;$i<=$max;$i++) {
 	    	array_push($vip,'O'.$row.$i);

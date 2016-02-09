@@ -21,12 +21,12 @@ app.controller('MainCtrl', function ($scope, $http, $window) {
     $http.get('php/getLayout.php').success(function(data) {
             $http.get('php/getReserved.php').success(function (data) {
 
-        console.log(data);
+             console.log(data);
 
-        for(var i=0;i<data.length;i++) {
-            reserved.push(data[i].seat_pos);
-        }
-       
+            for(var i=0;i<data.length;i++) {
+                reserved.push(data[i].seat_pos);
+            }
+               
 
     });
         $scope.rows = data[0];
@@ -35,7 +35,7 @@ app.controller('MainCtrl', function ($scope, $http, $window) {
         $scope.vip = data[3];
         $scope.rowsTwo = data[4];
         $scope.balLimit = data[5];
-        reserved = data[6];
+        reserved = data[6]; //shabi
         console.log(data);
         
     });
@@ -43,10 +43,10 @@ app.controller('MainCtrl', function ($scope, $http, $window) {
     
     
     $scope.haveSelected = function() {
-        if ($scope.selected =="") return false;
+        if ($scope.selected ==="") return false;
         else return true;
 
-        }
+        };
 
 
     $scope.submit = function () {
@@ -119,12 +119,12 @@ app.controller('MainCtrl', function ($scope, $http, $window) {
 
     $scope.isVIP = function(seatPos) {
         return $scope.vip.indexOf(seatPos)> -1;
-    }
+    };
 
 
     $scope.isThir = function(seatPos) {
         return $scope.thir.indexOf(seatPos)> -1;
-    }
+    };
 
     $scope.exceed = function(row,col,pos) {
         var rowNum;
@@ -152,7 +152,7 @@ app.controller('MainCtrl', function ($scope, $http, $window) {
             else return false;
         }
 
-    }
+    };
 
 
     $scope.getShift = function (row,pos) {
@@ -174,7 +174,7 @@ app.controller('MainCtrl', function ($scope, $http, $window) {
         return shift+"px";
    
 
-    }
+    };
 
 
 
