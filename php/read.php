@@ -1,5 +1,5 @@
 <?php
-$db = new mysqli('localhost','root','wdtda2907','chunwan');
+include "mail_ini.php";
 
 $handle = fopen("code.txt", "r");
 if ($handle) {
